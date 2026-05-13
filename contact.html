@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact Support</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+}
+
+body{
+  background:#f4f5f7;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  color:#111;
+}
+
+.card{
+  width:100%;
+  max-width:520px;
+  background:#fff;
+  border-radius:30px;
+  padding:32px 24px;
+  box-shadow:
+  0 10px 40px rgba(0,0,0,0.08);
+}
+
+.logo{
+  width:72px;
+  height:72px;
+  border-radius:24px;
+  background:linear-gradient(135deg,#4f46e5,#7c3aed);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:auto;
+  margin-bottom:22px;
+  color:#fff;
+  font-size:28px;
+}
+
+h1{
+  text-align:center;
+  font-size:30px;
+  margin-bottom:8px;
+  font-weight:700;
+}
+
+.subtitle{
+  text-align:center;
+  color:#666;
+  font-size:14px;
+  line-height:1.6;
+  margin-bottom:28px;
+}
+
+.label{
+  font-size:13px;
+  font-weight:600;
+  margin-bottom:8px;
+  display:block;
+  color:#444;
+}
+
+.input-group{
+  margin-bottom:18px;
+}
+
+.input-wrap{
+  position:relative;
+}
+
+.input-wrap i{
+  position:absolute;
+  left:16px;
+  top:50%;
+  transform:translateY(-50%);
+  color:#888;
+  font-size:14px;
+}
+
+textarea + i{
+  top:22px !important;
+  transform:none !important;
+}
+
+input,
+textarea{
+  width:100%;
+  border:none;
+  outline:none;
+  background:#f7f8fa;
+  border:1px solid #e5e7eb;
+  border-radius:18px;
+  padding:16px 16px 16px 46px;
+  font-size:14px;
+  transition:0.25s ease;
+}
+
+textarea{
+  min-height:140px;
+  resize:none;
+  line-height:1.6;
+}
+
+input:focus,
+textarea:focus{
+  border-color:#6366f1;
+  background:#fff;
+  box-shadow:0 0 0 4px rgba(99,102,241,0.12);
+}
+
+.send-btn{
+  width:100%;
+  border:none;
+  border-radius:18px;
+  padding:16px;
+  background:linear-gradient(135deg,#4f46e5,#7c3aed);
+  color:#fff;
+  font-size:15px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.2s ease;
+  margin-top:8px;
+}
+
+.send-btn:active{
+  transform:scale(0.98);
+}
+
+.support-box{
+  margin-top:24px;
+  padding:18px;
+  border-radius:20px;
+  background:#f8fafc;
+  border:1px solid #e5e7eb;
+  text-align:center;
+}
+
+.support-title{
+  font-size:13px;
+  color:#666;
+  margin-bottom:8px;
+}
+
+.support-email{
+  font-size:15px;
+  font-weight:600;
+}
+
+.support-email a{
+  color:#4f46e5;
+  text-decoration:none;
+}
+
+.footer{
+  margin-top:24px;
+  text-align:center;
+  font-size:12px;
+  color:#999;
+}
+
+@media(max-width:480px){
+
+  .card{
+    padding:26px 18px;
+    border-radius:24px;
+  }
+
+  h1{
+    font-size:26px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <div class="logo">
+    <i class="fa fa-headset"></i>
+  </div>
+
+  <h1>Contact Support</h1>
+
+  <div class="subtitle">
+    Need assistance with billing, inventory, cloud backup,
+    or account issues? Our support team is ready to help.
+  </div>
+
+  <div class="input-group">
+    <label class="label">Full Name</label>
+
+    <div class="input-wrap">
+      <i class="fa fa-user"></i>
+
+      <input
+      type="text"
+      id="name"
+      placeholder="Enter your full name">
+    </div>
+  </div>
+
+  <div class="input-group">
+    <label class="label">Email Address</label>
+
+    <div class="input-wrap">
+      <i class="fa fa-envelope"></i>
+
+      <input
+      type="email"
+      id="email"
+      placeholder="Enter your email address">
+    </div>
+  </div>
+
+  <div class="input-group">
+    <label class="label">Message</label>
+
+    <div class="input-wrap">
+      <i class="fa fa-comment-dots"></i>
+
+      <textarea
+      id="message"
+      placeholder="Describe your issue or question..."></textarea>
+    </div>
+  </div>
+
+  <button class="send-btn" onclick="sendMail()">
+    <i class="fa fa-paper-plane"></i>
+    Send Message
+  </button>
+
+  <div class="support-box">
+
+    <div class="support-title">
+      Direct Support Email
+    </div>
+
+    <div class="support-email">
+      <a href="mailto:sanjeevoberoi@proton.me">
+        sanjeevoberoi@proton.me
+      </a>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    © 2026 POS System Support
+  </div>
+
+</div>
+
+<script>
+function sendMail(){
+
+  let name =
+  document.getElementById("name").value.trim();
+
+  let email =
+  document.getElementById("email").value.trim();
+
+  let message =
+  document.getElementById("message").value.trim();
+
+  if(!name || !email || !message){
+    alert("Please fill all fields");
+    return;
+  }
+
+  let subject =
+  encodeURIComponent("POS System Support Request");
+
+  let body = encodeURIComponent(
+`Name: ${name}
+
+Email: ${email}
+
+Message:
+${message}`
+  );
+
+  window.location.href =
+`mailto:sanjeevoberoi@proton.me?subject=${subject}&body=${body}`;
+}
+</script>
+
+</body>
+</html>
